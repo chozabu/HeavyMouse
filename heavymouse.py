@@ -7,15 +7,15 @@ except ImportError:
     print("could not import defopt, command line options will not work")
     print("try 'pip install defopt'")
 
-def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None):
+def main(drag=0.02, grav=1.5, bottom='bounce', left='bounce', right='bounce', top='bounce', allsides=None):
     """Display a friendly greeting.
 
     :param float drag: amount of drag. 0.0 to 1.0, default is 0.02
     :param float grav: gravity, default is 1.5
     :param str bottom: can be 'bounce', 'wrap' or 'stop' - default is bounce
-    :param str left: can be 'bounce', 'wrap' or 'stop' - default is wrap
-    :param str right: can be 'bounce', 'wrap' or 'stop' - default is wrap
-    :param str top: can be 'bounce', 'wrap' or 'stop' - default is wrap
+    :param str left: can be 'bounce', 'wrap' or 'stop' - default is bounce
+    :param str right: can be 'bounce', 'wrap' or 'stop' - default is bounce
+    :param str top: can be 'bounce', 'wrap' or 'stop' - default is bounce
     :param str allsides: will override settings for each side - no default
     """
     friction = 1.0-drag
