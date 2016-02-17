@@ -7,13 +7,22 @@ except ImportError:
     print("could not import defopt, command line options will not work")
     print("try 'pip install defopt'")
 
-def main(drag=0.02, grav=1.5):
+def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None):
     """Display a friendly greeting.
 
     :param float drag: amount of drag. 0.0 to 1.0, default is 0.02
     :param float grav: gravity, default is 1.5
+    :param str bottom: can be 'bounce', 'wrap' or 'stop' - default is bounce
+    :param str left: can be 'bounce', 'wrap' or 'stop' - default is wrap
+    :param str right: can be 'bounce', 'wrap' or 'stop' - default is wrap
+    :param str top: can be 'bounce', 'wrap' or 'stop' - default is wrap
+    :param str allsides: will override settings for each side - no default
     """
     friction = 1.0-drag
+    
+    if allsides:
+        top=right=left=bottom=allsides
+    print(top, bottom)
 
 
     m = PyMouse()
@@ -51,19 +60,44 @@ def main(drag=0.02, grav=1.5):
             
             #wrap or bounce at screen edges
             if x < 0:
-                x+=width
-                mx+=width
+                if left == 'wrap':
+                    x+=width
+                    mx+=width
+                elif left == 'bounce':
+                    x-=vx*2
+                    xy=-vx
+                else: #stop
+                    x=0
+            
             if y < 0:
-                y+=height
-                my+=height
+                if top == 'wrap':
+                    y+=height
+                    my+=height
+                elif top == 'bounce':
+                    y-=vy*2
+                    vy=-vy
+                else: #stop
+                    y=0
+            
             if x > width:
-                x-=width
-                mx-=width
+                if right == 'wrap':
+                    x-=width
+                    mx-=width
+                elif right == 'bounce':
+                    x-=vx*2
+                    xy=-vx
+                else: #stop
+                    x=width
+            
             if y > height:
-                #y-=height
-                #my-=height
-                y-=vy*2
-                vy=-vy
+                if bottom == 'wrap':
+                    y-=height
+                    my-=height
+                elif bottom == 'bounce':
+                    y-=vy*2
+                    vy=-vy
+                else: #stop
+                    y=height
             
             #apply position to mouse
             m.move(int(x), int(y))
