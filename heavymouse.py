@@ -51,7 +51,7 @@ try:
             vy=-vy
         
         #apply position to mouse
-        m.move(x, y)
+        m.move(int(x), int(y))
         
         #debug output
         #positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
