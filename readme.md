@@ -10,3 +10,11 @@ Deps:
 To run:
 
     python heavymouse.py
+
+or on py3:
+
+    sudo apt-get install python-tk #is this needed? is it the right lib?
+    pip3 install pyautogui
+    python3 alternate_heavymouse.py
+    
+Sorry about the low update-rate on py3 - a PR to fix it would be very welcome ;)
