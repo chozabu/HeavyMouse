@@ -13,7 +13,8 @@ To run:
 
 or on py3:
 
-    sudo apt-get install python-tk #is this needed? is it the right lib?
+    sudo apt-get install python3-tk
+    sudo apt-get install python3-xlib
     pip3 install pyautogui
     python3 alternate_heavymouse.py
     
