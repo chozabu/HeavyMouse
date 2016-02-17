@@ -18,8 +18,8 @@ try:
         x,y=float(x), float(y)
         
         #alter vel by user input
-        vx += float(x-mx)-vx
-        vy += float(y-my)-vy
+        vx += float(x-mx)-vx+.5
+        vy += float(y-my)-vy+.5
         
         #drag
         vx*=0.98
