@@ -32,7 +32,7 @@ try:
             y-=vy*2
             vy=-vy
         
-        pyautogui.moveTo(x, y, duration=.002)#, pyautogui.easeOutQuad)
+        pyautogui.moveTo(x, y, duration=.1)#, pyautogui.easeOutQuad)
         positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
         #print(positionStr)
         #print('\b' * len(positionStr))
