@@ -10,7 +10,9 @@ Deps:
     
     
     pip install pyuserinput
-    # if you encounter problems, try: pip install pymouse
+    
+    #optional, for CLI options to control drag and gravity
+    pip install defopt
 
 
 To run:
