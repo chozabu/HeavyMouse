@@ -4,18 +4,25 @@ This is a silly program, designed to give your mouse momemtum, gravity and wrap/
 
 Deps:
 
-    pip install pymouse
+    sudo apt-get install python3-xlib
+    #OR
+    sudo apt-get install python-xlib
+    
+    
+    pip install pyuserinput
+    # if you encounter problems, try: pip install pymouse
 
 
 To run:
 
     python heavymouse.py
 
-or on py3:
+Alternate version, using pyautogui instead of pymouse/pyinput:
 
     sudo apt-get install python3-tk
     sudo apt-get install python3-xlib
     pip3 install pyautogui
+    
     python3 alternate_heavymouse.py
     
-Sorry about the low update-rate on py3 - a PR to fix it would be very welcome ;)
+Sorry about the low update-rate (jerkyness) on pyautogui version - a PR to fix it would be very welcome ;)
