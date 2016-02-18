@@ -7,7 +7,7 @@ except ImportError:
     print("could not import defopt, command line options will not work")
     print("try 'pip install defopt'")
 
-def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None, maxspeed=40):
+def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None, maxspeed=40, framerate=50):
     """Display a friendly greeting.
 
     :param float drag: amount of drag. 0.0 to 1.0, default is 0.02
@@ -17,10 +17,13 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='w
     :param str right: can be 'bounce', 'wrap' or 'stop' - default is wrap
     :param str top: can be 'bounce', 'wrap' or 'stop' - default is wrap
     :param str allsides: will override settings for each side - no default
-    :param int maxspeed: prevent the mouse moving (much) faster than this each frame
+    :param int maxspeed: prevent the mouse moving (much) faster than this each frame - default is 40
+    :param int framerate: frequency the program operates at - default is 50
     """
     friction = 1.0-drag
     
+    sleeptime = 1000.0/framerate/1000.0
+
     if allsides:
         top=right=left=bottom=allsides
     print(top, bottom)
@@ -115,8 +118,7 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='w
             #print('\b' * len(positionStr))
             #sys.stdout.flush()
             
-            #100 FPS maximum?
-            time.sleep(.02)
+            time.sleep(sleeptime)
     except KeyboardInterrupt:
         print('\n')
 
