@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, math
 from pymouse import PyMouse
 
 try:
@@ -7,7 +7,7 @@ except ImportError:
     print("could not import defopt, command line options will not work")
     print("try 'pip install defopt'")
 
-def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None):
+def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None, maxspeed=40):
     """Display a friendly greeting.
 
     :param float drag: amount of drag. 0.0 to 1.0, default is 0.02
@@ -17,6 +17,7 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='w
     :param str right: can be 'bounce', 'wrap' or 'stop' - default is wrap
     :param str top: can be 'bounce', 'wrap' or 'stop' - default is wrap
     :param str allsides: will override settings for each side - no default
+    :param int maxspeed: prevent the mouse moving (much) faster than this each frame
     """
     friction = 1.0-drag
     
@@ -51,6 +52,11 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='w
             
             #gravity
             vy+=grav
+            
+            vel = (math.sqrt(vx**2+vy**2))
+            if vel > maxspeed:
+                vx*=.7
+                vy*=.7
             
             #update current and previous position
             mx=x
