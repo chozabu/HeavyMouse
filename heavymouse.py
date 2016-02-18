@@ -16,7 +16,7 @@ except ImportError:
     o_\\-mm-......-mm`~~~~~~~~~~~~~~~~`    
 '''
 
-def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None, maxspeed=40, framerate=50):
+def main(drag=0.02, grav=1.5, bottom='bounce', left='bounce', right='bounce', top='bounce', allsides=None, maxspeed=40, framerate=50):
     """HeavyMouse - a python mouse mover\n  
     
     example, for bouncy walls, no gravity and less speed:  \n
@@ -25,9 +25,9 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='w
     :param float drag: amount of drag. 0.0 to 1.0, default is 0.02
     :param float grav: gravity, default is 1.5
     :param str bottom: can be 'bounce', 'wrap' or 'stop' - default is bounce
-    :param str left: can be 'bounce', 'wrap' or 'stop' - default is wrap
-    :param str right: can be 'bounce', 'wrap' or 'stop' - default is wrap
-    :param str top: can be 'bounce', 'wrap' or 'stop' - default is wrap
+    :param str left: can be 'bounce', 'wrap' or 'stop' - default is bounce
+    :param str right: can be 'bounce', 'wrap' or 'stop' - default is bounce
+    :param str top: can be 'bounce', 'wrap' or 'stop' - default is bounce
     :param str allsides: will override settings for each side - no default
     :param int maxspeed: prevent the mouse moving (much) faster than this each frame - default is 40
     :param int framerate: frequency the program operates at - default is 50
