@@ -7,8 +7,20 @@ except ImportError:
     print("could not import defopt, command line options will not work")
     print("try 'pip install defopt'")
 
+'''
+
+              ___
+     _  _  .-'   '-.
+    (.)(.)/         \   jgs (art from http://www.ascii-code.com/ascii-art/animals/rodents/mice.php)
+     /@@             ;
+    o_\\-mm-......-mm`~~~~~~~~~~~~~~~~`    
+'''
+
 def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='wrap', allsides=None, maxspeed=40, framerate=50):
-    """Display a friendly greeting.
+    """HeavyMouse - a python mouse mover\n  
+    
+    example, for bouncy walls, no gravity and less speed:  \n
+    python heavymouse.py --drag .04 --grav 0 --allsides bounce --maxspeed 10
 
     :param float drag: amount of drag. 0.0 to 1.0, default is 0.02
     :param float grav: gravity, default is 1.5
@@ -19,6 +31,7 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='wrap', right='wrap', top='w
     :param str allsides: will override settings for each side - no default
     :param int maxspeed: prevent the mouse moving (much) faster than this each frame - default is 40
     :param int framerate: frequency the program operates at - default is 50
+
     """
     friction = 1.0-drag
     
