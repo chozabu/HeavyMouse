@@ -135,9 +135,12 @@ def main(drag=0.02, grav=1.5, bottom='bounce', left='bounce', right='bounce', to
     except KeyboardInterrupt:
         print('\n')
 
-
-if __name__ == '__main__':
+def run_main():
     try:
         defopt.run(main)
     except NameError:
         main()
+    
+    
+if __name__ == '__main__':
+    run_main()
