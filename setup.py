@@ -9,5 +9,6 @@ setup(
   url = 'https://github.com/chozabu/HeavyMouse', # use the URL to the github repo
   download_url = 'https://github.com/chozabu/HeavyMouse/tarball/0.5', # I'll explain this in a second
   keywords = ['joke', 'fun', 'physics'], # arbitrary keywords
+  install_requires=['python-xlib',],
   classifiers = [],
 )
