@@ -1,0 +1,41 @@
+===HeavyMouse===
+
+A simple program to give your mouse momentum and mass
+
+--install--
+
+pip3 install heavymouse
+
+--usage--
+
+python3 -m heavymouse
+
+--details--
+
+heavymouse uses defopt for command line options, you can see the details by running
+
+python3 -m heavymouse --help
+
+usage: heavymouse.py [-h] [--drag DRAG] [--grav GRAV] [--bottom BOTTOM]
+                     [--left LEFT] [--right RIGHT] [--top TOP]
+                     [--allsides ALLSIDES] [--maxspeed MAXSPEED]
+                     [--framerate FRAMERATE]
+
+HeavyMouse - a python mouse mover
+
+example, for bouncy walls, no gravity and less speed:
+
+python heavymouse.py --drag .04 --grav 0 --allsides bounce --maxspeed 10
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --drag DRAG           amount of drag. 0.0 to 1.0, default is 0.02 (default: 0.02)
+  --grav GRAV           gravity, default is 1.5 (default: 1.5)
+  --bottom BOTTOM       can be 'bounce', 'wrap' or 'stop' - default is bounce (default: bounce)
+  --left LEFT           can be 'bounce', 'wrap' or 'stop' - default is bounce (default: bounce)
+  --right RIGHT         can be 'bounce', 'wrap' or 'stop' - default is bounce (default: bounce)
+  --top TOP             can be 'bounce', 'wrap' or 'stop' - default is bounce (default: bounce)
+  --allsides ALLSIDES   will override settings for each side - no default (default: None)
+  --maxspeed MAXSPEED   prevent the mouse moving (much) faster than this each frame - default is 40 (default: 40)
+  --framerate FRAMERATE
+                        frequency the program operates at - default is 50 (default: 50)
